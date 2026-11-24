@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Mann's retro arcade portfolio — projects, skills and contact.">
+<title>Mann.embarko.app — Player Portfolio</title>
+<style>
+:root{color-scheme:dark;--bg:#080808;--panel:#111;--line:#444;--muted:#aaa;--white:#f7f7f7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+a{color:inherit;text-decoration:none}.wrap{width:min(1050px,100% - 40px);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#080808ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{font-weight:950;font-size:clamp(14px,3vw,21px);letter-spacing:-1px}.brand span{color:#888}
+nav{display:flex;gap:20px;font-size:11px;font-weight:bold}nav a:hover{text-decoration:underline}
+button,.btn{font:inherit;color:inherit;background:transparent;border:1px solid #eee;padding:11px 15px;font-size:11px;font-weight:800;letter-spacing:1px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+button:hover,.btn:hover{background:#fff;color:#000;transform:translateY(-3px)}
+.hero{background-image:linear-gradient(#3333 1px,transparent 1px),linear-gradient(90deg,#3333 1px,transparent 1px);background-size:28px 28px;padding:90px 0 60px}
+.eyebrow{font-size:11px;letter-spacing:2px;color:var(--muted)}.hero h1{font-size:clamp(58px,12vw,116px);line-height:.95;letter-spacing:-.09em;margin:25px 0;font-weight:1000}.muted{color:var(--muted)}.intro{max-width:600px;font-size:15px;line-height:1.9}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.status{border-top:1px solid var(--line);margin-top:65px;padding-top:18px;display:flex;justify-content:space-between;gap:10px;font-size:11px;color:var(--muted)}
+section{padding:75px 0}.divider{border-top:1px solid #282828;border-bottom:1px solid #282828}.section-kicker{font-size:11px;color:var(--muted);margin-bottom:18px}.section-title{font-size:clamp(36px,7vw,55px);letter-spacing:-.07em;margin:0 0 12px;font-weight:950}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:var(--panel);border:1px solid var(--line);padding:22px;transition:.25s}.card:hover{transform:translateY(-6px);border-color:#fff;background:#191919}.profile{display:grid;grid-template-columns:1fr 1fr;gap:35px;margin-top:30px}.pixel{font-size:52px;font-weight:1000;letter-spacing:-8px}.tag{display:inline-block;border:1px solid #777;padding:6px 9px;font-size:10px;margin:4px 3px 0 0}.meta{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid var(--line);margin-top:22px;padding-top:18px;font-size:11px}.meta p{margin:8px 0 0}.card h3{font-size:19px;margin:12px 0}.card p{font-size:12px;line-height:1.8;color:var(--muted)}.leveltop{display:flex;justify-content:space-between;color:#aaa;font-size:11px}.icon{font-size:34px;margin:25px 0 10px}.bar{height:5px;background:#333;margin-top:18px}.bar span{display:block;height:100%;background:white;width:0;transition:width 1.2s}
+.achievement{text-align:center;border-top:1px solid #282828;border-bottom:1px solid #282828}.star{font-size:75px;margin:20px}.contact-title{font-size:clamp(50px,10vw,85px);line-height:.95;letter-spacing:-.08em;margin:20px 0}
+footer{border-top:1px solid var(--line);padding-top:20px;margin-top:65px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s,transform .65s}.reveal.show{opacity:1;transform:none}.blink{animation:blink 1.2s steps(2,start) infinite}@keyframes blink{to{visibility:hidden}}
+#editbar{display:none;background:#eee;color:#111;padding:14px;font-size:11px}body.editing #editbar{display:block}.editable[contenteditable=true]{outline:1px dashed #fff;outline-offset:4px;cursor:text}
+@media(max-width:620px){.wrap{width:min(100% - 30px,1050px)}.nav{height:60px}nav{gap:10px;font-size:9px}.editbtn{padding:8px}.hero{padding-top:65px}.profile,.grid{grid-template-columns:1fr}.wide{grid-column:auto}.card{padding:18px}section{padding:58px 0}.status{font-size:9px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#home">Mann<span>.embarko.app</span></a><nav><a href="#levels">LEVELS</a><a href="#skills">SKILLS</a><a href="#contact">CONTACT</a></nav><button class="editbtn" id="edit">✎ EDIT</button></div></header>
+<div id="editbar">EDIT MODE — Click any outlined text to change it. <button id="save" style="background:#111;color:#fff;margin:8px">SAVE CHANGES</button><button id="reset" style="color:#111;margin:8px">RESET TEXT</button><button id="done" style="color:#111;margin:8px">DONE</button><br>Saved changes stay in this browser.</div>
+<main id="home">
+<section class="hero"><div class="wrap">
+<div class="eyebrow">● PLAYER 01　/　PORTFOLIO 2026</div><div class="eyebrow" style="margin-top:45px">WELCOME TO MY WORLD_</div>
+<h1 class="editable" data-edit="hero">HELLO,<br>I'M MANN<span class="blink">_</span></h1>
+<p class="intro muted editable" data-edit="intro">An aspiring AI & Machine Learning developer, exploring code, building ideas and levelling up one project at a time.</p>
+<div class="actions"><a class="btn" href="#levels">▶ EXPLORE MY WORK</a><a class="btn" href="#contact">LET'S CONNECT ↗</a></div>
+<div class="status"><span>STATUS: <b style="color:white">READY TO PLAY</b></span><span>SCROLL TO CONTINUE ↓</span></div>
+</div></section>
+<section class="wrap reveal"><div class="section-kicker">[ 01 ] CHARACTER PROFILE</div><h2 class="section-title">THE PLAYER</h2>
+<div class="profile"><div class="card"><div class="muted" style="font-size:11px">[ PLAYER CARD ]</div><div class="pixel">M.</div><b class="editable" data-edit="name">MANN</b><p class="editable" data-edit="role">ASPIRING AI / ML DEVELOPER</p><div class="meta"><div><span class="muted">CLASS</span><p>DEVELOPER</p></div><div><span class="muted">LOCATION</span><p class="editable" data-edit="location">INDIA</p></div><div><span class="muted">MISSION</span><p>BUILD & LEARN</p></div><div><span class="muted">STATUS</span><p>LEVELING UP</p></div></div></div>
+<div><h3 class="editable" data-edit="abouttitle">Not just playing. Creating.</h3><p class="muted editable" data-edit="about" style="font-size:13px;line-height:2">I'm a curious learner interested in technology, programming and artificial intelligence. I enjoy exploring new concepts, solving problems and turning ideas into something real. Every challenge is another opportunity to improve.</p><span class="tag">CURIOUS MIND</span><span class="tag">PROBLEM SOLVER</span><span class="tag">FUTURE BUILDER</span></div></div></section>
+<section id="levels" class="divider"><div class="wrap reveal"><div class="section-kicker">[ 02 ] GAME PROGRESS　/　3 LEVELS</div><h2 class="section-title">MY LEVELS.</h2><p class="muted" style="font-size:13px;margin-bottom:30px">Every project is a new level. Every bug is a new boss.</p>
+<div class="grid">
+<article class="card"><div class="leveltop"><span>LEVEL 01</span><span>01 / 03</span></div><div class="icon">⌨</div><h3 class="editable" data-edit="project1">PYTHON CALCULATOR</h3><p class="editable" data-edit="project1desc">A simple calculator that performs basic arithmetic operations using Python.</p><span class="tag">PYTHON</span><span class="tag">LOGIC</span></article>
+<article class="card"><div class="leveltop"><span>LEVEL 02</span><span>02 / 03</span></div><div class="icon">▦</div><h3 class="editable" data-edit="project2">STUDENT MARKS SYSTEM</h3><p class="editable" data-edit="project2desc">A beginner-friendly program to calculate total and average marks.</p><span class="tag">PYTHON</span><span class="tag">INPUT / OUTPUT</span></article>
+<article class="card wide"><div class="leveltop"><span>LEVEL 03</span><span>LOCKED / IN PROGRESS</span></div><div class="icon">◈</div><h3 class="editable" data-edit="project3">YOUR NEXT BIG PROJECT</h3><p class="editable" data-edit="project3desc">The next adventure is waiting. More projects coming soon.</p><span class="tag">COMING SOON</span></article>
+</div></div></section>
+<section id="skills" class="wrap reveal"><div class="section-kicker">[ 03 ] INVENTORY / POWER-UPS</div><h2 class="section-title">MY POWER-UPS.</h2><p class="muted" style="font-size:13px;margin-bottom:30px">Tools and abilities collected along the way.</p>
+<div class="grid">
+<div class="card"><div class="icon">⌘</div><b class="editable" data-edit="skill1">PYTHON</b><p>PROGRAMMING</p><div class="bar"><span data-progress="55"></span></div></div>
+<div class="card"><div class="icon">⚙</div><b class="editable" data-edit="skill2">C / C++</b><p>PROGRAMMING</p><div class="bar"><span data-progress="35"></span></div></div>
+<div class="card"><div class="icon">◉</div><b class="editable" data-edit="skill3">DSA</b><p>PROBLEM SOLVING</p><div class="bar"><span data-progress="25"></span></div></div>
+<div class="card"><div class="icon">▤</div><b class="editable" data-edit="skill4">HTML / CSS</b><p>WEB DEVELOPMENT</p><div class="bar"><span data-progress="25"></span></div></div>
+<div class="card"><div class="icon">✧</div><b class="editable" data-edit="skill5">AI / ML</b><p>EXPLORING</p><div class="bar"><span data-progress="15"></span></div></div>
+<div class="card"><div class="icon">♜</div><b class="editable" data-edit="skill6">LOGIC</b><p>THINKING</p><div class="bar"><span data-progress="45"></span></div></div>
+</div><p class="muted" style="font-size:10px;margin-top:15px">* Skill bars are illustrative. Update them to reflect your actual experience.</p></section>
+<section class="achievement reveal"><div class="wrap"><div class="eyebrow">ACHIEVEMENT UNLOCKED</div><div class="star">★</div><h2 class="section-title editable" data-edit="achievement">THE JOURNEY BEGINS.</h2><p class="muted editable" data-edit="achievementdesc">Still learning. Still building. Never done leveling up.</p></div></section>
+<section id="contact" class="wrap reveal"><div class="section-kicker">[ 04 ] FINAL LEVEL</div><h2 class="contact-title editable" data-edit="contacttitle">LET'S<br>CONNECT<span class="blink">_</span></h2><p class="muted editable" data-edit="contactdesc" style="font-size:13px;line-height:2;max-width:500px">Got an interesting idea, project or opportunity? Let's make something awesome together.</p><div class="actions"><a class="btn" id="email" href="mailto:your@email.com">✉ EMAIL ME</a><a class="btn" href="https://github.com/" target="_blank" rel="noopener">⌘ GITHUB ↗</a><a class="btn" href="https://linkedin.com/" target="_blank" rel="noopener">IN LINKEDIN ↗</a></div><footer><span>© 2026 MANN.EMBARKO.APP</span><span>INSERT COIN TO CONTINUE ▮</span></footer></section>
+</main>
+<script>
+(()=>{const nodes=[...document.querySelectorAll('[data-edit]')],defaults={};nodes.forEach(n=>defaults[n.dataset.edit]=n.innerHTML);const key='mannPortfolioText';try{const saved=JSON.parse(localStorage.getItem(key)||'{}');nodes.forEach(n=>{if(saved[n.dataset.edit])n.innerHTML=saved[n.dataset.edit]})}catch(e){}
+let editing=false;const set=v=>{editing=v;document.body.classList.toggle('editing',v);nodes.forEach(n=>n.contentEditable=v?'true':'false');document.getElementById('edit').textContent=v?'✎ EDITING':'✎ EDIT'};
+document.getElementById('edit').onclick=()=>set(!editing);document.getElementById('done').onclick=()=>set(false);document.getElementById('save').onclick=()=>{const d={};nodes.forEach(n=>d[n.dataset.edit]=n.innerHTML);try{localStorage.setItem(key,JSON.stringify(d));alert('Changes saved in this browser!')}catch(e){alert('Could not save changes in this browser.')}};
+document.getElementById('reset').onclick=()=>{if(confirm('Reset all text?')){nodes.forEach(n=>n.innerHTML=defaults[n.dataset.edit]);localStorage.removeItem(key)}};
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');e.target.querySelectorAll('[data-progress]').forEach(b=>b.style.width=b.dataset.progress+'%');obs.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+})();
+</script></body></html>
